@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faHeartBroken, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import { Link } from "react-router-dom";
 
 const Book = ({ book, favourites, setFavourites }) => {
+  const [fav, setFav] = useState(false);
+
   const { id, title, agents } = book;
   const { person } = agents[0];
 
   const handleClickFav = () => {
+    setFav(!fav);
+
     const index = favourites.findIndex((fav) => fav.id === id);
     if (index === -1) {
       setFavourites([...favourites, { id, title }]);
@@ -35,8 +39,11 @@ const Book = ({ book, favourites, setFavourites }) => {
           />
         </Link>
         <button onClick={handleClickFav}>
-          <FontAwesomeIcon icon={faStar} />
-          Add to Favourites
+          {fav ? (
+            <FontAwesomeIcon icon={faHeartBroken} />
+          ) : (
+            <FontAwesomeIcon icon={faHeart} />
+          )}
         </button>
       </div>
     </BookStyled>

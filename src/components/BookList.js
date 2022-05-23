@@ -92,7 +92,6 @@ const BookListStyled = styled.div`
 
 const Button = styled.button`
   display: block;
-  padding: 1rem;
   width: auto;
   margin: 1rem auto;
 

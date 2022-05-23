@@ -74,7 +74,7 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  transition: 1s;
+  transition: 0.6s;
 
   &.show {
     width: 80%;
