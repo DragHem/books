@@ -83,7 +83,7 @@ const BookListStyled = styled.div`
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  transition: 1s;
+  transition: 0.6s;
 
   &.show {
     width: 80%;
