@@ -76,6 +76,8 @@ const StyledNav = styled.nav`
   padding: 1rem;
   transition: 0.6s;
 
+  @media screen and (min-width: 700px) {
+  }
   &.show {
     width: 80%;
   }
@@ -85,14 +87,18 @@ const StyledNav = styled.nav`
     font-size: 1.2rem;
     background-color: transparent;
     border-bottom: 1px solid black;
-    width: 50%;
+  }
+
+  div input {
+    button {
+      margin-left: 1rem;
+    }
   }
 
   button {
     border: none;
     background-color: transparent;
     font-size: 1.2rem;
-    padding: 0 1rem;
     cursor: pointer;
 
     svg {
@@ -101,6 +107,18 @@ const StyledNav = styled.nav`
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+
+    div {
+      margin: 1.4rem 0;
+      input {
+        width: 50%;
+        margin: 0 auto;
+      }
     }
   }
 `;
